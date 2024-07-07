@@ -199,71 +199,108 @@
         <form action="/submit_employee" method="post">
             <h2>Thông tin nhân viên</h2>
 
-            <label for="id">Mã nhân viên</label>
-            <input type="text" id="id" name="id" required>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="id">Mã nhân viên</label>
+                    <input type="text" id="id" name="id" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Họ và Tên</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
 
-            <label for="name">Họ và Tên</label>
-            <input type="text" id="name" name="name" required>
+                <div class="form-group">
+                    <label for="dob">Ngày sinh</label>
+                    <input type="text" id="dob" name="dob" placeholder="mm/dd/yyyy" required>
+                </div>
 
-            <label for="dob">Ngày sinh</label>
-            <input type="text" id="dob" name="dob" placeholder="mm/dd/yyyy" required>
+                <div class="form-group">
+                    <label for="gender">Giới tính</label>
+                    <div class="gender">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Nam</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Nữ</label>
+                        <input type="radio" id="none" name="gender" value="none">
+                        <label for="none">Khác</label>
+                    </div>
+                </div>
 
-            <label for="gender">Giới tính</label>
-            <div class="gender">
-                <input type="radio" id="male" name="gender" value="male" required>
-                <label for="male">Nam</label>
-                <input type="radio" id="female" name="gender" value="female">
-                <label for="female">Nữ</label>
             </div>
 
-            <label for="position">Vị trí</label>
-            <input type="text" id="position" name="position" required>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="position">Vị trí</label>
+                    <input type="text" id="position" name="position" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_number">Số CMTND</label>
+                    <input type="text" id="id_number" name="id_number" required>
+                </div>
+                <div class="form-group">
 
-            <label for="id_number">Số CMTND</label>
-            <input type="text" id="id_number" name="id_number" required>
+                    <label for="issue_date">Ngày cấp</label>
+                    <input type="text" id="issue_date" name="issue_date" placeholder="mm/dd/yyyy" required>
+                </div>
+            </div>
 
-            <label for="issue_date">Ngày cấp</label>
-            <input type="text" id="issue_date" name="issue_date" placeholder="mm/dd/yyyy" required>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="department">Phòng ban</label>
+                    <input type="text" id="department" name="department" required>
+                </div>
+                <div class="form-group">
+                    <label for="issue_place">Nơi cấp</label>
+                    <input type="text" id="issue_place" name="issue_place" required>
+                </div>
+            </div>
 
-            <label for="department">Phòng ban</label>
-            <input type="text" id="department" name="department" required>
+            <div class="form-group">
+                <label for="address">Địa chỉ</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="mobile">ĐT Di động</label>
+                    <input type="tel" id="mobile" name="mobile" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">ĐT cố định</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
 
-            <label for="issue_place">Nơi cấp</label>
-            <input type="text" id="issue_place" name="issue_place" required>
-            <label for="address">Địa chỉ</label>
-            <input type="text" id="address" name="address" required>
-    
-            <label for="mobile">ĐT Di động</label>
-            <input type="tel" id="mobile" name="mobile" required>
-    
-            <label for="phone">ĐT cố định</label>
-            <input type="tel" id="phone" name="phone" required>
-    
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-    
-            <label for="bank_account">Tài khoản ngân hàng</label>
-            <input type="text" id="bank_account" name="bank_account" required>
-    
-            <label for="bank_name">Tên ngân hàng</label>
-            <input type="text" id="bank_name" name="bank_name" required>
-    
-            <label for="branch">Chi nhánh</label>
-            <input type="text" id="branch" name="branch" required>
-    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="bank_account">Tài khoản ngân hàng</label>
+                    <input type="text" id="bank_account" name="bank_account" required>
+                </div>
+                <div class="form-group">
+                    <label for="bank_name">Tên ngân hàng</label>
+                    <input type="text" id="bank_name" name="bank_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="branch">Chi nhánh</label>
+                    <input type="text" id="branch" name="branch" required>
+                </div>
+            </div>
             <div class="buttons">
                 <button type="button" class="cancel">Huỷ</button>
                 <button type="submit" class="save">Cất</button>
             </div>
         </form>
     </div>
-    
+
     <script>
         document.querySelector('.close').addEventListener('click', function () {
             const sidebar = document.querySelector('.sidebar');
             const main = document.querySelector('.main');
             const isCollapsed = sidebar.classList.toggle('collapsed');
-    
+
             if (isCollapsed) {
                 sidebar.style.width = '50px';
                 main.style.marginLeft = '50px';
@@ -271,14 +308,14 @@
                 sidebar.style.width = '200px';
                 main.style.marginLeft = '200px';
             }
-    
+
             const closeText = document.querySelector('.close-text');
             closeText.style.display = isCollapsed ? 'none' : 'block';
-    
+
             const closeIcon = document.querySelector('.close img');
             closeIcon.style.transform = isCollapsed ? 'rotate(180deg)' : 'rotate(0deg)';
         });
-    
+
         document.querySelector('.cancel').addEventListener('click', function () {
             const inputs = document.querySelectorAll('.form_nhanvien input');
             inputs.forEach(input => input.value = '');
@@ -286,11 +323,12 @@
             radios.forEach(radio => radio.checked = false);
             document.querySelector('.form_nhanvien').style.display = 'none';
         });
-    
+
         document.querySelector('.button-add-employee').addEventListener('click', function () {
             document.querySelector('.form_nhanvien').style.display = 'block';
         });
-    
+
     </script>
 </body>
-</html>    
+
+</html>
