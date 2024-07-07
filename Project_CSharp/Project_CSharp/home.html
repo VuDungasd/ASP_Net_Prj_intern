@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Filterable Table</title>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="header-top">
+            <div class="img-menu">
+                <img src="https://cdn-icons-png.flaticon.com/512/660/660376.png" alt="">
+            </div>
+            <div class="icon-misa">
+                <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MISA-CukCuk.png" alt="">
+            </div>
+        </div>
+
+        <div class="home">
+            <div class="sidebar">
+                <ul>
+                    <li><a href="#"><img src="data:image/png;base64,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" alt=""> Trang chủ</a></li>
+                    <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/130/130535.png" alt=""> Báo cáo</a></li>
+                    <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1524/1524579.png" alt=""> Nhân viên</a></li>
+                    <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1828/1828467.png" alt=""> Cài đặt</a></li>
+                </ul>
+            </div>
+
+            <div class="main">
+                <div class="header-main">
+                    <h2 class="text-manager">Quản lý nhân viên</h2>
+                    <button class="button-add-employee">Thêm mới</button>
+                </div>
+
+                <div class="table">
+                    <div class="search">
+                        <input type="text" id="myInput" placeholder="Search for names..">
+                        <div class="export">
+                            <img src="https://img.icons8.com/color/480w/export-excel.png" alt="">
+                        </div>
+                        <div class="reload">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHPfHLC8FvD2_hoUtj_zmJw46S2G7GoAvyBA&s" alt="">
+                        </div>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã nhân viên</th>
+                                <th>Họ và tên</th>
+                                <th>Giới tính</th>
+                                <th>Ngày sinh</th>
+                                <th>Địa chỉ Email</th>
+                                <th>Địa chỉ</th>
+                                <!-- <th>Action</th> -->
+                            </tr>
+                        </thead>
+                        <tbody id="myTable">
+                            <tr>
+                                <td>1</td>
+                                <td>NV01</td>
+                                <td>Alan</td>
+                                <td>Male</td>
+                                <td>20-10-2002</td>
+                                <td>Alan@gmail.com</td>
+                                <td>HN Viet Nam</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>NV02</td>
+                                <td>Helen</td>
+                                <td>Female</td>
+                                <td>20-10-2002</td>
+                                <td>Helen@gmail.com</td>
+                                <td>Viet Nam</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>NV03</td>
+                                <td>Mary</td>
+                                <td>Male</td>
+                                <td>20-10-2000</td>
+                                <td>mary@mail.com</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>NV04</td>
+                                <td>July</td>
+                                <td>Female</td>
+                                <td>20-10-2002</td>
+                                <td>july@greatstuff.com</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>NV05</td>
+                                <td>Anja</td>
+                                <td>Female</td>
+                                <td>20-10-2002</td>
+                                <td>a_r@test.com</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>NV06</td>
+                                <td>Anjaz</td>
+                                <td>Female</td>
+                                <td>20-11-2002</td>
+                                <td>a_r@test.com</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>NV04</td>
+                                <td>Anja</td>
+                                <td>Female</td>
+                                <td>20-10-2002</td>
+                                <td>a_r@test.com</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>NV04</td>
+                                <td>Anja</td>
+                                <td>Female</td>
+                                <td>20-10-2002</td>
+                                <td>a_r@test.com</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>NV04</td>
+                                <td>Anja</td>
+                                <td>Female</td>
+                                <td>20-10-2002</td>
+                                <td>a_r@test.com</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>NV04</td>
+                                <td>Anja</td>
+                                <td>Female</td>
+                                <td>20-10-2002</td>
+                                <td>a_r@test.com</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>NV04</td>
+                                <td>Anja</td>
+                                <td>Female</td>
+                                <td>20-10-2002</td>
+                                <td>a_r@test.com</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>NV04</td>
+                                <td>Anja</td>
+                                <td>Female</td>
+                                <td>20-10-2002</td>
+                                <td>a_r@test.com</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>NV04</td>
+                                <td>Anja</td>
+                                <td>Female</td>
+                                <td>20-10-2002</td>
+                                <td>a_r@test.com</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>NV04</td>
+                                <td>Anja</td>
+                                <td>Female</td>
+                                <td>20-10-2002</td>
+                                <td>a_r@test.com</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>NV04</td>
+                                <td>Anja</td>
+                                <td>Female</td>
+                                <td>20-10-2002</td>
+                                <td>a_r@test.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form_nhanvien">
+        <form action="/submit_employee" method="post">
+            <h2>Thông tin nhân viên</h2>
+            <label for="id">Mã nhân viên</label>
+            <input type="text" id="id" name="id" required>
+
+            <label for="name">Họ và Tên:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Số Điện Thoại:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="dob">Ngày Sinh:</label>
+            <input type="date" id="dob" name="dob" required>
+            
+            <label for="position">Vị Trí:</label>
+            <input type="text" id="position" name="position" required>
+            
+            <button type="submit">Lưu</button>
+        </form>
+    </div>
+    
+</body>
+</html>
