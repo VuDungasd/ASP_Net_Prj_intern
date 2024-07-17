@@ -1,0 +1,79 @@
+.button-add-employee {
+    display: flex;
+    /* margin-left: 30px; */
+    height: 42px;
+    width: 130px;
+    background-color: #1ab741;
+    justify-content: center;
+    align-items: center;
+    margin-left: 908px;
+    /* border: 2px solid 1ab741;
+    border-radius: 5px; */
+}
+
+.button-add-employee h5 {
+    margin-left: 2px;
+    width: 75px;
+    font-size: 15px !important;
+}
+
+.button-add-employee img {
+    padding-top: 4px;
+}
+
+button {
+    /* padding: 5px 10px; */
+    font-size: 15px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border: 0px solid #1ab741;
+    border-radius: 5px;
+}
+
+
+/* button:hover {
+    background-color: #007961;
+} */
+
+.button-add-employee:hover {
+    background-color: #007961;
+}
+
+.address-cell {
+    position: relative;
+    padding-right: 50px;
+}
+
+.icons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    /* Ẩn biểu tượng mặc định */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Nền trắng với độ trong suốt */
+    padding: 5px;
+    /* Khoảng cách giữa các biểu tượng */
+    border-radius: 5px;
+    /* Bo tròn các góc */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    /* Tạo bóng đổ */
+}
+
+.action-icon {
+    width: 20px;
+    /* Điều chỉnh kích thước theo yêu cầu */
+    height: 20px;
+    /* Điều chỉnh kích thước theo yêu cầu */
+    margin: 0 2px;
+    /* Điều chỉnh khoảng cách giữa các biểu tượng */
+    cursor: pointer;
+    vertical-align: middle;
+    /* Để các icon căn giữa với text */
+}
+
+.address-cell:hover .icons {
+    display: flex;
+    /* Hiển thị biểu tượng khi hover */
+}
