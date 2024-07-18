@@ -2,7 +2,6 @@
 @import url(../compoments/input.css);
 @import url(../compoments/table.css);
 @import url(../compoments/combobox.css);
-
 * {
     padding: 0;
     margin: 0;
@@ -16,7 +15,7 @@ body {
 .header {
     display: block;
     position: relative;
-    padding-top: 10px;
+    padding-top: 8px;
     /* margin-top: 10px; */
     /* height: 20px; */
 }
@@ -26,19 +25,19 @@ body {
     width: 100%;
     padding-top: 3px;
     /* position: relative; */
-    height: 40px;
+    height: 46px;
     /* flex: ; */
 }
 
 .header .header-top .img-menu img {
-    padding-left: 20px;
-    padding-top: 2px;
-    width: 21px;
+    padding-left: 24px;
+    padding-top: 5px;
+    width: 24px;
 }
 
 .header .header-top .icon-misa img {
-    padding-left: 30px;
-    width: 100px;
+    padding-left: 22px;
+    width: 136px;
 }
 
 .header .header-top .server {
@@ -47,38 +46,44 @@ body {
     display: flex;
 }
 
-.header .header-top .server h4 {
-    padding-left: 25px;
-    padding-top: 3px;
-    width: 165px;
-    font-size: 19px;
+.header .header-top .server h5 {
+    padding-left: 20px;
+    padding-top: 7px;
+    width: 154px;
+    font-size: 18px;
 }
+
 .header .header-top .server img {
     margin-bottom: 10px;
     /* padding-left: 30px; */
     width: 25px;
     transform: rotate(90deg);
 }
+
 .header .header-top .user {
     display: flex;
-    margin-left: 804px;
+    margin-left: 868px;
     justify-content: center;
     text-align: center;
     /* padding-left: 30px; */
 }
-.header .header-top .user .avt img{
-    width: 28px;
-}
-.header .header-top .user .name{
-    padding-left: 10px;
-    margin-top: 7px;
-}
-.header .header-top .user .dot{
-    padding-left: 10px;
-    margin-top: 7px;
-    /* width: ; */
+
+.header .header-top .user .avt img {
+    width: 36px;
 }
 
+.header .header-top .user .name {
+    padding-left: 12px;
+    margin-top: 10px;
+    /* font-size: ; */
+}
+
+.header .header-top .user .dot {
+    width: 34px;
+    padding-left: 8px;
+    margin-top: 10px;
+    /* width: ; */
+}
 
 .home {
     display: flex;
@@ -86,14 +91,15 @@ body {
 }
 
 .sidebar {
-    width: 200px;
+    width: 18%;
     height: 100%;
     background-color: #333;
-    padding-top: 20px;
-    position: fixed;
+    padding-top: 15px;
+    /* float: left; */
     overflow: auto;
     /* them */
-    transition: width 0.3s;
+    transition: width 0.5s;
+    padding-right: 3px;
 }
 
 .sidebar ul {
@@ -102,11 +108,13 @@ body {
 }
 
 .sidebar ul li {
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     display: flex;
-    align-items: center; /* Align items vertically */
-    justify-content: start; /* Align items to the start */
+    align-items: center;
+    /* Align items vertically */
+    justify-content: start;
+    /* Align items to the start */
 }
 
 .sidebar ul li a {
@@ -116,13 +124,14 @@ body {
     border-radius: 5px;
     text-decoration: none;
     display: flex;
-    align-items: center; /* Align items vertically */
+    align-items: center;
+    /* Align items vertically */
     width: 100%;
 }
 
 .sidebar ul li a img {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
     margin-right: 12px;
     margin-left: 16px;
     filter: opacity(0.5) drop-shadow(0 0 0 rgb(255, 255, 255));
@@ -132,15 +141,15 @@ body {
     background-color: #575757;
 }
 
-.sidebar .close{
+.sidebar .close {
     display: flex;
     border-top: 1px #ccc solid;
-    margin-top: 374px;
+    margin-top: 345px;
     height: 50px;
     color: #ffffff;
 }
 
-.sidebar .close img{
+.sidebar .close img {
     margin-top: 10px;
     margin-left: 20px;
     margin-right: 22px;
@@ -149,20 +158,43 @@ body {
     /* transform: rotate(90deg); */
     /* filter: opacity(0.5) drop-shadow(#ccc); */
 }
-.sidebar .close .close-text{
+
+.sidebar .close .close-text {
     margin-top: 15px;
 }
 
-.close:hover{
+.close:hover {
     background-color: #575757;
+}
+
+.sidebar.collapsed ul li a span {
+    display: none;
+}
+
+.sidebar ul li {
+    justify-content: center;
+}
+
+.sidebar.collapsed ul li a img {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.sidebar.collapsed ul li a {
+    justify-content: center;
+}
+
+.sidebar.collapsed .close img {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .main {
     padding: 20px;
-    padding-left: 36px;
-    padding-right: 36px;
-    margin-left: 200px;
+    padding-left: 26px;
+    padding-right: 26px;
     width: 100%;
+    /* float: right; */
     overflow: auto;
     background-color: #666;
 }
@@ -172,7 +204,7 @@ body {
     display: flex;
     align-items: center;
     justify-self: center;
-    height: 50px;
+    height: 46px;
     padding-bottom: 20px;
     /* width: 50px; */
 }
@@ -180,7 +212,7 @@ body {
 h2.text-manager {
     /* margin-top: 20px; */
     color: #ffffff;
-    padding-left: 10px;
+    /* padding-left: 10px; */
     width: 210px;
     /* padding-top: 10px; */
     /* justify-content: center; */
@@ -198,8 +230,8 @@ h2.text-manager {
 }
 
 .search input[type="text"] {
-    width: 30%;
-    height: 45px;
+    width: 25%;
+    height: 40px;
     padding: 12px 20px;
     margin-top: 20px;
     margin-left: 20px;
@@ -208,29 +240,31 @@ h2.text-manager {
     box-sizing: border-box;
     font-size: 16px;
     background-image: url('./assets/icon/search.png');
-    background-position: right 10px center; /* Đặt icon ở phía cuối và căn giữa theo chiều dọc */
+    background-position: right 10px center;
+    /* Đặt icon ở phía cuối và căn giữa theo chiều dọc */
     background-repeat: no-repeat;
-    padding-right: 40px; /* Tạo khoảng trống để icon không bị chồng lên text */
+    padding-right: 40px;
+    /* Tạo khoảng trống để icon không bị chồng lên text */
 }
-
 
 .search .export {
     display: block;
     border: 1px solid #cccccc;
     border-radius: 4px;
     background-color: #ebebeb;
-    width: 43px;
-    height: 43px;
+    width: 38px;
+    height: 38px;
     margin-top: 20px;
-    margin-left: 664px;
+    transition: width 0.5s;
+    margin-left: 802px;
     justify-content: center;
     text-align: center;
 }
 
-.search .export img{
-    padding-top: 7px;
-    width: 30px;
-    height: 30px;
+.search .export img {
+    padding-top: 6px;
+    width: 25px;
+    height: 25px;
 }
 
 .search .reload {
@@ -240,36 +274,37 @@ h2.text-manager {
     background-color: #ebebeb;
     justify-content: center;
     text-align: center;
-    width: 43px;
-    height: 43px;
+    width: 38px;
+    height: 38px;
     margin-top: 20px;
     margin-left: 12px;
     /* margin-left: 650px; */
 }
 
-.search .reload img{
-    padding-top: 6px;
-    width: 28px;
-    height: 28px;
+.search .reload img {
+    padding-top: 7px;
+    width: 25px;
+    height: 25px;
 }
 
-.end-table{
+.end-table {
     display: flex;
     justify-content: center;
     align-items: center;
     /* padding-top: 10px; */
 }
-.sum-record {
-}
+
+.sum-record {}
 
 .record {
     justify-content: center;
     text-align: center;
     padding-top: 14px;
-    padding-left: 800px;
+    padding-left: 878px;
     display: flex;
 }
-.record .record-text{
+
+.record .record-text {
     width: 150px;
 }
 
@@ -278,7 +313,8 @@ h2.text-manager {
     width: 16px;
     margin-bottom: 18px;
 }
-.record img::placeholder{
+
+.record img::placeholder {
     /* transform: rotate(90); */
     /* background-color: aqua; */
 }
@@ -290,11 +326,13 @@ h2.text-manager {
     /* margin-bottom: 16px; */
 }
 
-.next-page img{
+.next-page img {
     width: 36px;
 }
 
+
 /* Form nhân viên */
+
 .form_nhanvien {
     background-color: #ffffff;
     padding: 20px;
@@ -306,7 +344,8 @@ h2.text-manager {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
 }
 
 .form_nhanvien h2 {
@@ -381,4 +420,3 @@ h2.text-manager {
 .form_nhanvien .buttons button:hover {
     opacity: 0.8;
 }
-
