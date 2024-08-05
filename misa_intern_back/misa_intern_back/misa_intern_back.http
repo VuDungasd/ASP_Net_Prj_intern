@@ -1,0 +1,6 @@
+@misa_intern_back_HostAddress = http://localhost:5179
+
+GET {{misa_intern_back_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

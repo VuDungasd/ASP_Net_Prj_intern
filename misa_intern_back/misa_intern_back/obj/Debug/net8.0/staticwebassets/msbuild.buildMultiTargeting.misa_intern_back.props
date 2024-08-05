@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/misa_intern_back.props" />
+</Project>

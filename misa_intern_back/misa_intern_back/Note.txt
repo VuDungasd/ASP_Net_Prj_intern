@@ -1,0 +1,11 @@
+
+dotnet ef database update --project CodeFirst.csproj --startup-project CodeFirst.csproj --context ApplicationDbContext --configuration Debug --framework net8.0
+dotnet ef migrations add InitialCreate 
+dotnet ef database update
+
+
+
+terminal note :v
+
+dotnet ef migrations add init
+dotnet ef database update
