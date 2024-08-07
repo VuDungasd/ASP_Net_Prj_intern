@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./css/pages/main.css"> -->
+    <!-- <link rel="stylesheet" href="./css/pages/main.css"> -->
     <link rel="stylesheet" href="./css/pages/main.css">
     <title>Document</title>
 </head>
@@ -19,7 +21,7 @@
                 <img src="./assets/img/cukcuk-logo.png" alt="">
             </div>
             <div class="server">
-                <h5>Chi nhánh Hà Nội</h5>
+                <h4>Chi nhánh Hà Nội</h4>
                 <img src="./assets/icon/btn-next-page.svg">
             </div>
             <div class="user">
@@ -50,7 +52,6 @@
                     <div class="close-text">Thu gọn</div>
                 </div>
             </div>
-
 
             <div class="main">
                 <div class="header-main">
@@ -86,7 +87,7 @@
                                 </tr>
                             </thead>
                             <tbody id="myTable">
-                                <!-- DBS -->
+                                <!-- data -->
                             </tbody>
                         </table>
                     </div>
@@ -108,22 +109,23 @@
     </div>
 
     <div class="form_nhanvien" style="display: none;">
-        <form action="/submit_employee" method="post">
+        <!-- <form action="/submit_employee" method="post"> -->
+        <form id="employeeForm" action="/api/user" method="post">
             <h2>Thông tin nhân viên</h2>
 
             <div class="form-row">
                 <div class="form-group">
-                    <label for="id">Mã nhân viên</label>
-                    <input type="text" id="id" name="id" required>
+                    <label for="code">Mã nhân viên</label>
+                    <input type="text" id="code" name="code" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Họ và Tên</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="userName">Họ và Tên</label>
+                    <input type="text" id="userName" name="username" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="dob">Ngày sinh</label>
-                    <input type="text" id="dob" name="dob" placeholder="mm/dd/yyyy" required>
+                    <label for="birthday">Ngày sinh</label>
+                    <input type="date" id="birthday" name="birthday" required>
                 </div>
 
                 <div class="form-group">
@@ -146,13 +148,13 @@
                     <input type="text" id="position" name="position" required>
                 </div>
                 <div class="form-group">
-                    <label for="id_number">Số CMTND</label>
-                    <input type="text" id="id_number" name="id_number" required>
+                    <label for="personalNumber">Số CMTND</label>
+                    <input type="text" id="personalNumber" name="personalNumber" required>
                 </div>
                 <div class="form-group">
 
-                    <label for="issue_date">Ngày cấp</label>
-                    <input type="text" id="issue_date" name="issue_date" placeholder="mm/dd/yyyy" required>
+                    <label for="create_date">Ngày cấp</label>
+                    <input type="date" id="create_date" name="create_date" placeholder="mm/dd/yyyy" required>
                 </div>
             </div>
 
@@ -162,8 +164,8 @@
                     <input type="text" id="department" name="department" required>
                 </div>
                 <div class="form-group">
-                    <label for="issue_place">Nơi cấp</label>
-                    <input type="text" id="issue_place" name="issue_place" required>
+                    <label for="issued_By">Nơi cấp</label>
+                    <input type="text" id="issued_By" name="issued_By" required>
                 </div>
             </div>
 
@@ -173,12 +175,12 @@
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="mobile">ĐT Di động</label>
-                    <input type="tel" id="mobile" name="mobile" required>
+                    <label for="mobilePhone">ĐT Di động</label>
+                    <input type="tel" id="mobilePhone" name="mobilePhone" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">ĐT cố định</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <label for="landline">ĐT cố định</label>
+                    <input type="tel" id="landline" name="landline" required>
                 </div>
                 <div class="form-group">
 
@@ -188,16 +190,16 @@
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="bank_account">Tài khoản ngân hàng</label>
-                    <input type="text" id="bank_account" name="bank_account" required>
+                    <label for="bacnkCode">Tài khoản ngân hàng</label>
+                    <input type="text" id="bacnkCode" name="bacnkCode" required>
                 </div>
                 <div class="form-group">
-                    <label for="bank_name">Tên ngân hàng</label>
-                    <input type="text" id="bank_name" name="bank_name" required>
+                    <label for="bankName">Tên ngân hàng</label>
+                    <input type="text" id="bankName" name="bankName" required>
                 </div>
                 <div class="form-group">
-                    <label for="branch">Chi nhánh</label>
-                    <input type="text" id="branch" name="branch" required>
+                    <label for="bankBranch">Chi nhánh</label>
+                    <input type="text" id="bankBranch" name="bankBranch" required>
                 </div>
             </div>
             <div class="buttons">
@@ -208,8 +210,8 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://cukcuk.manhnv.net/api/v1/Customers')
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('http://localhost:5179/api/user')
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
@@ -218,27 +220,27 @@
                 .catch(error => console.error('Error fetching data:', error));
         });
 
-        function populateTable(customers) {
+        function populateTable(users) {
             const tableBody = document.getElementById('myTable');
             tableBody.innerHTML = '';
 
-            customers.forEach((customer, index) => {
+            users.forEach((user, index) => {
                 const row = document.createElement('tr');
 
                 row.innerHTML = `
                     <td>${index + 1}</td>
-                    <td>${customer.CustomerCode}</td>
-                    <td>${customer.FullName}</td>
-                    <td>${customer.Gender}</td>
-                    <td>${new Date(customer.DateOfBirth).toLocaleDateString()}</td>
-                    <td>${customer.Email}</td>
-                    <td class="address-cell">${customer.Address}
+                    <td>${user.code}</td>
+                    <td>${user.userName}</td>
+                    <td>${user.gender}</td>
+                    <td>${new Date(user.birthday).toLocaleDateString()}</td>
+                    <td>${user.email}</td>
+                    <td class="address-cell">${user.address}
                         <div class="icons">
                             <div class="edit">
-                                <img src="./assets/icon/delete-48.png" alt="Edit" class="action-icon">
+                                <img src="./assets/icon/pencil-icon.png" alt="Edit" class="action-icon">
                             </div>
                             <div class="copy">
-                                <img src="./assets/icon/date-picker.svg" alt="Copy" class="action-icon">
+                                <img src="./assets/icon/copy-icon.png" alt="Copy" class="action-icon">
                             </div>
                             <div class="delete">
                                 <img src="./assets/icon/close-48.png" alt="Delete" class="action-icon">
@@ -251,7 +253,7 @@
             });
         }
 
-        document.querySelector('.close').addEventListener('click', function() {
+        document.querySelector('.close').addEventListener('click', function () {
             const sidebar = document.querySelector('.sidebar');
             const isCollapsed = sidebar.classList.toggle('collapsed');
             const manager = document.querySelector('.button-add-employee');
@@ -260,14 +262,14 @@
 
             if (isCollapsed) {
                 sidebar.style.width = '70px';
-                manager.style.marginLeft = '1066px';
-                exxport.style.marginLeft = '918px';
-                endtable.style.paddingLeft = '1038px';
+                manager.style.marginLeft = '978px';
+                exxport.style.marginLeft = '838px';
+                endtable.style.paddingLeft = '965px';
             } else {
                 sidebar.style.width = '18%';
-                manager.style.marginLeft = '908px';
-                exxport.style.marginLeft = '802px';
-                endtable.style.paddingLeft = '878px';
+                manager.style.marginLeft = '828px';
+                exxport.style.marginLeft = '726px';
+                endtable.style.paddingLeft = '814px';
             }
 
             const closeText = document.querySelector('.close-text');
@@ -277,7 +279,7 @@
             closeIcon.style.transform = isCollapsed ? 'rotate(180deg)' : 'rotate(0deg)';
         });
 
-        document.querySelector('.cancel').addEventListener('click', function() {
+        document.querySelector('.cancel').addEventListener('click', function () {
             const inputs = document.querySelectorAll('.form_nhanvien input');
             inputs.forEach(input => input.value = '');
             const radios = document.querySelectorAll('.form_nhanvien input[type="radio"]');
@@ -285,56 +287,43 @@
             document.querySelector('.form_nhanvien').style.display = 'none';
         });
 
-        document.querySelector('.button-add-employee').addEventListener('click', function() {
+        document.querySelector('.button-add-employee').addEventListener('click', function () {
             document.querySelector('.form_nhanvien').style.display = 'block';
         });
+
+        document.getElementById('employeeForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            fetch('http://localhost:5179/api/user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    alert('Employee added successfully!');
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        });
+
+        function fetchUsers() {
+            fetch('http://localhost:5179/api/user')
+                .then(response => response.json())
+                .then(data => {
+                    populateTable(data);
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
     </script>
-
-    <!-- <script>
-        document.querySelector('.close').addEventListener('click', function() {
-            const sidebar = document.querySelector('.sidebar');
-            const isCollapsed = sidebar.classList.toggle('collapsed');
-            const manager = document.querySelector('.button-add-employee');
-            const exxport = document.querySelector('.export');
-            const endtable = document.querySelector('.record');
-
-            if (isCollapsed) {
-                sidebar.style.width = '70px';
-                manager.style.marginLeft = '1066px';
-                exxport.style.marginLeft = '918px';
-                endtable.style.paddingLeft = '1038px';
-                // main.style.marginLeft = '50px';
-            } else {
-                sidebar.style.width = '18%';
-                manager.style.marginLeft = '908px';
-                exxport.style.marginLeft = '802px';
-                endtable.style.paddingLeft = '878px';
-                // main.style.marginLeft = '200px';
-            }
-
-            const closeText = document.querySelector('.close-text');
-            closeText.style.display = isCollapsed ? 'none' : 'block';
-
-            const closeIcon = document.querySelector('.close img');
-            closeIcon.style.transform = isCollapsed ? 'rotate(180deg)' : 'rotate(0deg)';
-        });
-
-        // document.
-
-
-
-        document.querySelector('.cancel').addEventListener('click', function() {
-            const inputs = document.querySelectorAll('.form_nhanvien input');
-            inputs.forEach(input => input.value = '');
-            const radios = document.querySelectorAll('.form_nhanvien input[type="radio"]');
-            radios.forEach(radio => radio.checked = false);
-            document.querySelector('.form_nhanvien').style.display = 'none';
-        });
-
-        document.querySelector('.button-add-employee').addEventListener('click', function() {
-            document.querySelector('.form_nhanvien').style.display = 'block';
-        });
-    </script> -->
 </body>
 
 </html>

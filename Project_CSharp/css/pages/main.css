@@ -46,7 +46,7 @@ body {
     display: flex;
 }
 
-.header .header-top .server h5 {
+.header .header-top .server h4 {
     padding-left: 20px;
     padding-top: 7px;
     width: 154px;
@@ -62,7 +62,7 @@ body {
 
 .header .header-top .user {
     display: flex;
-    margin-left: 868px;
+    margin-left: 794px;
     justify-content: center;
     text-align: center;
     /* padding-left: 30px; */
@@ -144,7 +144,7 @@ body {
 .sidebar .close {
     display: flex;
     border-top: 1px #ccc solid;
-    margin-top: 345px;
+    margin-top: 418px;
     height: 50px;
     color: #ffffff;
 }
@@ -239,8 +239,9 @@ h2.text-manager {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 16px;
-    background-image: url('./assets/icon/search.png');
-    background-position: right 10px center;
+    /* background-image: url('./assets/icon/search.png'); */
+    background-image: url('../../assets/icon/search.png');
+    background-position: right 20px center;
     /* Đặt icon ở phía cuối và căn giữa theo chiều dọc */
     background-repeat: no-repeat;
     padding-right: 40px;
@@ -256,7 +257,7 @@ h2.text-manager {
     height: 38px;
     margin-top: 20px;
     transition: width 0.5s;
-    margin-left: 802px;
+    margin-left: 726px;
     justify-content: center;
     text-align: center;
 }
@@ -300,7 +301,7 @@ h2.text-manager {
     justify-content: center;
     text-align: center;
     padding-top: 14px;
-    padding-left: 878px;
+    padding-left: 814px;
     display: flex;
 }
 
@@ -327,7 +328,7 @@ h2.text-manager {
 }
 
 .next-page img {
-    width: 36px;
+    width: 30px;
 }
 
 
