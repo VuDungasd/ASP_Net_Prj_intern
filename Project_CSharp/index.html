@@ -93,7 +93,7 @@
                     </div>
 
                     <div class="end-table">
-                        <div class="sum-record">Tổng: 100</div>
+                        <div class="sum-record">Tổng: <span id="userCount">0</span></div>
                         <div class="record">
                             <div class="record-text">Số bản ghi/trang: 10</div>
                             <img src="./assets/icon/btn-prev-page.svg" alt="">
@@ -219,6 +219,12 @@
                     populateTable(data);
                 })
                 .catch(error => console.error('Error fetching data:', error));
+            fetch('http://localhost:5179/api/v1/CustomerGroups/count')
+                .then(response => response.json())
+                .then(count => {
+                    document.getElementById('userCount').innerText = count;
+                })
+                .catch(error => console.error('Error fetching user count:', error));
         });
 
         function populateTable(users) {
