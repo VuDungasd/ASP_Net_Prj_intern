@@ -2,5 +2,5 @@
 frontend html
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/81a64ef5-506e-417a-843a-be7d73a7d84a">
 add Employee
-![Uploading image.png…]()
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/4c1a078d-7ccd-4b32-b301-1ff0c37798a1">
 API backend
