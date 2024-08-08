@@ -5,7 +5,7 @@ using misa_intern_back.Models;
 
 namespace misa_intern_back.Controllers;
 
-[Route("api/user")]
+[Route("/api/v1/CustomerGroups")]
 [ApiController]
 
 public class UserController : ControllerBase
@@ -17,13 +17,23 @@ public class UserController : ControllerBase
         _appDbContext = appDbContext;
     }
 
+    // get all user
     [HttpGet]
     public IActionResult GetAll()
     {
         var users = _appDbContext.Users.ToList();
         return Ok(users);
     }
+    
+    // get all record number in dbs
+    [HttpGet("count")]
+    public async Task<ActionResult<int>> GetUserCount()
+    {
+        var userCount = await _appDbContext.Users.CountAsync();
+        return Ok(userCount);
+    }
 
+    // get user by userID
     [HttpGet("{id}")]
     public IActionResult GetById([FromRoute] int id)
     {
@@ -35,14 +45,7 @@ public class UserController : ControllerBase
         return Ok(user);
     }
 
-    // [HttpPost]
-    // public IActionResult CreateUser([FromBody] User user)
-    // {
-    //     _appDbContext.Users.Add(user);
-    //     _appDbContext.SaveChanges();
-    //     return CreatedAtAction(nameof(GetById), new { id = user.Id }, user);
-    // }
-    
+    // post api to create user 
     [HttpPost]
     public async Task<ActionResult<User>> PostUser(User user)
     {
@@ -52,13 +55,10 @@ public class UserController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = user.Id }, user);
     }
     
+    // update user by userID
     [HttpPut("{id}")]
     public async Task<IActionResult> PutUser(int id, User user)
     {
-        // if (id != user.Id)
-        // {
-        //     return BadRequest("User ID mismatch");
-        // }
 
         var existingUser = await _appDbContext.Users.FindAsync(id);
         if (existingUser == null)
